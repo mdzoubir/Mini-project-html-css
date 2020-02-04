@@ -1,0 +1,71 @@
+$color1: hsl(322, 100%, 66%);
+$color2: hsl(193, 100%, 96%);
+$color3: hsl(192, 100%, 9%);
+$color4: hsl(0, 0%, 100%);
+$color5: hsl(208, 11%, 55%);
+@mixin flex($space, $colrow) {
+    display: flex;
+    flex-direction: $colrow;
+    justify-content: $space;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+// -------------------------------container
+body {
+    background-color: $color2;
+    font-size: 18px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.section1 {
+    background-image: url(/images/bg-hero-desktop.svg);
+    padding: 20px 40px;
+    .container {
+        margin-top: 20px;
+        @include flex(space-between,
+        row);
+        margin-bottom: 20px;
+        .pr {
+            background-color: $color4;
+            padding: 0px 30px;
+            margin-right: 100px;
+            border-radius: 30px;
+            box-shadow: 0 3px 3px 0 #d2d2d2;
+            margin-top: -10px;
+            p {
+                padding: 0 40px;
+            }
+        }
+    }
+    .build {
+        @include flex(space-between,
+        row);
+        .text {
+            padding-top: 30px;
+            padding-left: 30px;
+            button {
+                border: 1px solid $color1;
+                background-color: $color1;
+                width: 30%;
+                height: 10%;
+                border-radius: 20px;
+                color: $color4;
+            }
+        }
+        .header1 {
+            width: 60%;
+            font-family: 'Poppins', sans-serif;
+        }
+        p {
+            width: 75%;
+        }
+        .img1 {
+            width: 120%;
+            margin-left: -100px;
+        }
+    }
+}
